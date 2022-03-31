@@ -1,4 +1,4 @@
-import './App.css';
+import './Styles/App.css';
 import React, { Component } from 'react';
 import Personal from './Components/PersonalInfo';
 import Summary from './Components/Summary';
