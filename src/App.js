@@ -1,7 +1,7 @@
 import './Styles/App.css';
 import React, { Component } from 'react';
 import Personal from './Components/PersonalInfo';
-import Summary from './Components/Summary';
+import Socials from './Components/Socials';
 import WorkExperience from './Components/WorkExperience';
 import Education from './Components/Education';
 import Skills from './Components/Skills';
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <Personal></Personal>
-        <Summary></Summary>
+        <Socials></Socials>
         <WorkExperience></WorkExperience>
         <Education></Education>
         <Skills></Skills>

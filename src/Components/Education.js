@@ -1,10 +1,9 @@
 
-export default class Education {
-    render() {
-        return (
-            <div>
-            
-            </div>
-        )
-    }
+const Education = (props) => {
+
+    return (
+        <section></section>
+    );
 }
+
+export default Education;

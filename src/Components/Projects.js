@@ -1,10 +1,9 @@
 
-export default class Project {
-    render() {
-        return (
-            <div>
-            
-            </div>
-        )
-    }
+const Projects = (props) => {
+
+    return (
+        <section></section>
+    );
 }
+
+export default Projects;

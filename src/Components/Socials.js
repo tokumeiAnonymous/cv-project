@@ -1,9 +1,9 @@
 
-const Skills = (props) => {
+const Socials = (props) => {
 
     return (
         <section></section>
     );
 }
 
-export default Skills;
+export default Socials;

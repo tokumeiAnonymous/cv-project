@@ -1,10 +1,9 @@
 
-export default class WorkExperience {
-    render() {
-        return (
-            <div>
-            
-            </div>
-        )
-    }
+const WorkExperience = (props) => {
+
+    return (
+        <section></section>
+    );
 }
+
+export default WorkExperience;
