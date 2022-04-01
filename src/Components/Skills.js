@@ -2,7 +2,9 @@
 const Skills = (props) => {
 
     return (
-        <section></section>
+        <section>
+            <h2></h2>
+        </section>
     );
 }
 

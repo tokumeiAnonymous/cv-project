@@ -3,7 +3,7 @@ const Personal = (props) => {
 
     return (
         <section id='personal-info'>
-            <div className='section-title'>Personal Information</div>
+            <h2 className='section-title'>Personal Information</h2>
             <label htmlFor='name'>Name: </label>
             <input id='name' type='text' required/>
             <label htmlFor='profession'>Profession: </label>

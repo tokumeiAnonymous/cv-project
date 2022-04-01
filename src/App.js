@@ -10,12 +10,15 @@ import Projects from './Components/Projects'
 class App extends Component {
   constructor() {
     super();
+
+    /* passed update method as props then receive it as onChange */
   }
 
   render() {
     return (
       <div className="App">
         <Personal></Personal>
+        {/* add the buttons here or in the component*/}
         <Socials></Socials>
         <WorkExperience></WorkExperience>
         <Education></Education>

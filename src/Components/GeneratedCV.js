@@ -1,5 +1,5 @@
 
-const Socials = (props) => {
+const GeneratedCV = (props) => {
 
     return (
         <section>
@@ -8,4 +8,4 @@ const Socials = (props) => {
     );
 }
 
-export default Socials;
+export default GeneratedCV;
