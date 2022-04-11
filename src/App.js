@@ -38,17 +38,32 @@ class App extends Component {
     this.updateData = this.updateData.bind(this);
   }
 
-  updateData = (e) => {
+  updateData = e => {
+    e.preventDefault();
     this.setState({
       // should update the specific data but for now personal info
-      personal: {...this.state.personal, [e.target.id]: e.target.value}
+      [e.target.parentNode.id]: {...this.state[e.target.parentNode.id], [e.target.id]: e.target.value}
+    })
+  }
+/*
+  updateArray = e => {
+    e.preventDefault();
+    const toUpdate = e.target.parentNode.getAttribute('data-value');
+    const temp = this.state[toUpdate];
+    this.setState({
+
     })
   }
 
+  deleteFromArray = e => {
+
+  }
+*/
   render() {
     return (
       <div className = 'App'>
-          <Form data={this.state} update={(e) => this.updateData(e)} />
+          <Form data={this.state} update={e => this.updateData(e)} 
+                /* updateArray={e => this.updateArray(e)} deleteFromArray={e => this.deleteFromArray(e)} */ />
         <div className = 'generated'>
           <aside>
             <Personal personal={this.state.personal} />

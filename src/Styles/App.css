@@ -21,7 +21,7 @@
   border: 1px solid black;
 }
 
-.form #personal-info {
+.form #personal {
   display: flex;
   flex-direction: column;
 }
