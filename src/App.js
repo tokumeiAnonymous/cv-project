@@ -6,6 +6,7 @@ import WorkExperience from "./Components/WorkExperience";
 import Education from "./Components/Education";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
+import Form from "./Components/Form";
 
 class App extends Component {
   constructor() {
@@ -13,37 +14,53 @@ class App extends Component {
 
     this.state = {
       personal: {
-        name: "Jane Doe",
-        profession: "Software Developer",
-        contact: "091234567",
-        email: "janedoe@gmail.com",
+        name: 'Jane Doe',
+        profession: 'Software Developer',
+        address: 'Cebu city, Philippines',
+        contact: '091234567',
+        email: 'janedoe@gmail.com',
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, recusandae et.",
-        photo: "alternative",
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, recusandae et.',
+        photo: 'https://www.stevensegallery.com/400/400',
       },
+      experience: [ { name: 'Awesome Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                    { name: 'Fantastic Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}],
+      education: [ { name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+                    { name: 'The Odin Project', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},],
+      projects: [{ name: 'Project 1', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 1' },
+                  { name: 'Project 2', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 2' }],
+      socials: [{ name: 'Github', link: 'https://github.com/tokumeiAnonymous' }, 
+                { name: 'LinkedIn', link: 'https://www.linkedin.com/in/jerome-taguba-a15735231/' }, 
+                { name: 'Website', link: 'https://tokumeianonymous.github.io/temporary-portfolio/' }],
+      skills: ['html/css/javascript', 'git', 'react', 'java', 'node']
     };
     /* passed update method as props then receive it as onChange */
     this.updateData = this.updateData.bind(this);
   }
 
   updateData = (e) => {
-    const newName = e.target.value;
     this.setState({
       // should update the specific data but for now personal info
-      personal: {...this.state.personal, name: newName}
+      personal: {...this.state.personal, [e.target.id]: e.target.value}
     })
   }
 
   render() {
     return (
-      <div className="App">
-        <Personal personal={this.state.personal} update={(e) => this.updateData(e)} />
-        {/* add the buttons here or in the component */}
-        <Socials/>
-        <WorkExperience/>
-        <Education/>
-        <Skills/>
-        <Projects/>
+      <div className = 'App'>
+          <Form data={this.state} update={(e) => this.updateData(e)} />
+        <div className = 'generated'>
+          <aside>
+            <Personal personal={this.state.personal} />
+            <Socials socials={this.state.socials} />
+          </aside>
+          <main>
+            <WorkExperience experience={this.state.experience} />
+            <Education education={this.state.education} />
+            <Skills skills={this.state.skills} />
+            <Projects projects={this.state.projects} />
+          </main>
+        </div>
       </div>
     );
   }

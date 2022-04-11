@@ -1,10 +1,17 @@
 
 const Socials = (props) => {
-
+    const { socials } = props;
     return (
-        <section>
-            <h2></h2>
-        </section>
+        <ul>
+            {socials.map( site => {
+                return (
+                    <li key={site.name}>
+                        <div>{site.name}</div>
+                        <a href={site.link}>{site.link}</a>
+                    </li>
+                )
+            })}
+        </ul>
     );
 }
 

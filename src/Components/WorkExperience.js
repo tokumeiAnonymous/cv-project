@@ -1,10 +1,17 @@
 
 const WorkExperience = (props) => {
-
+    const { experience } = props;
     return (
-        <section>
-            <h2></h2>
-        </section>
+        <ul>
+        {experience.map( job => {
+            return (
+                <li key={job.name}>
+                    <div>{job.name}</div>
+                    <div>{job.description}</div>
+                </li>
+            )
+        })}
+        </ul>
     );
 }
 

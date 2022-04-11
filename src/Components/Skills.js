@@ -1,10 +1,17 @@
 
 const Skills = (props) => {
 
+    const { skills } = props;
     return (
-        <section>
-            <h2></h2>
-        </section>
+        <ul>
+        {skills.map( skill => {
+            return (
+                <li key={skill}>
+                    <div>{skill}</div>
+                </li>
+            )
+        })}
+        </ul>
     );
 }
 

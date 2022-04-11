@@ -1,0 +1,45 @@
+
+:root {
+  --large-margin: 50px;
+  --medium-margin: 20px;
+  --small-margin: 10px;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.form, .generated {
+  flex-basis: 600px;
+  margin-left: var(--medium-margin);
+  margin-right: var(--medium-margin);
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.form #personal-info {
+  display: flex;
+  flex-direction: column;
+}
+/*Personal Component*/
+.generated {
+  display: flex;
+}
+
+.aside {
+  width: 100px;
+  flex-grow: 1;
+}
+
+.main {
+  width: 200px;
+  flex-grow: 2;
+}
+.generated img {
+  border-radius: 200px;
+  width: 200px;
+}
