@@ -1,7 +1,7 @@
 
 const Form = (props) => {
 
-  const { data, update /* updateArray, deleteFromArray*/ } = props;
+  const { data, update, updateDataArray /*, deleteFromArray*/ } = props;
   const { personal, experience } = data;
   return (
     <div className = 'form'>
@@ -33,12 +33,12 @@ const Form = (props) => {
       <section id='work-experience'>
           {experience.map( job => {
             return (
-              <div key={job.name} data-value='experience'>
+              <div key={job.name} data-state='experience' data-value={job.name} >
                 <label htmlFor='work-name'>Work Name: </label>
-                <input id='work-name' type='text' data-value={job.name} placeholder={job.name} onChange={e => {update(e)}} required/>
+                <input id='work-name' type='text' placeholder={job.name} onChange={e => updateDataArray(e)} required/>
 
                 <label htmlFor='work-desc'>Work Description: </label>
-                <input id='work-desc' type='text' data-value={job.description} placeholder={job.description} onChange={e => {update(e)}} required/>
+                <input id='work-desc' type='text' placeholder={job.description} onChange={e => updateDataArray(e)} required/>
               </div>
             )
           })}

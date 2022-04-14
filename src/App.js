@@ -23,9 +23,9 @@ class App extends Component {
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, recusandae et.',
         photo: 'https://www.stevensegallery.com/400/400',
       },
-      experience: [ { name: 'Awesome Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+      experience: [{ name: 'Awesome Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
                     { name: 'Fantastic Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}],
-      education: [ { name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
+      education: [{ name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
                     { name: 'The Odin Project', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},],
       projects: [{ name: 'Project 1', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 1' },
                   { name: 'Project 2', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 2' }],
@@ -45,25 +45,41 @@ class App extends Component {
       [e.target.parentNode.id]: {...this.state[e.target.parentNode.id], [e.target.id]: e.target.value}
     })
   }
-/*
-  updateArray = e => {
-    e.preventDefault();
-    const toUpdate = e.target.parentNode.getAttribute('data-value');
-    const temp = this.state[toUpdate];
-    this.setState({
 
+  updateDataArray = e => {
+    // handle one by one??? for every array
+    e.preventDefault();
+    const toUpdateState = e.target.parentNode.getAttribute('data-state');
+    const value = e.target.parentNode.getAttribute('data-value');
+    const temp = this.getElementWith(value, this.state[toUpdateState]);
+    // console.log(temp, value, toUpdateState);
+    const newName = e.target.value;
+    const newDesc = e.target.value;
+    const updated = [...temp, {name: newName, description: newDesc}]
+
+    this.setState({
+      [toUpdateState]: [...this.state[toUpdateState], updated]
     })
   }
-
+/*
   deleteFromArray = e => {
 
   }
 */
+
+getElementWith = (value, array) => {
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name === value) return array[i];
+  }
+
+  return null;
+}
   render() {
     return (
       <div className = 'App'>
           <Form data={this.state} update={e => this.updateData(e)} 
-                /* updateArray={e => this.updateArray(e)} deleteFromArray={e => this.deleteFromArray(e)} */ />
+                updateDataArray={e => this.updateDataArray(e)} /* deleteFromArray={e => this.deleteFromArray(e)} */ />
         <div className = 'generated'>
           <aside>
             <Personal personal={this.state.personal} />
