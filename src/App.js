@@ -41,45 +41,66 @@ class App extends Component {
   updateData = e => {
     e.preventDefault();
     this.setState({
-      // should update the specific data but for now personal info
       [e.target.parentNode.id]: {...this.state[e.target.parentNode.id], [e.target.id]: e.target.value}
     })
   }
 
   updateDataArray = e => {
-    // handle one by one??? for every array
     e.preventDefault();
-    const toUpdateState = e.target.parentNode.getAttribute('data-state');
-    const value = e.target.parentNode.getAttribute('data-value');
-    const temp = this.getElementWith(value, this.state[toUpdateState]);
-    // console.log(temp, value, toUpdateState);
-    const newName = e.target.value;
-    const newDesc = e.target.value;
-    const updated = [...temp, {name: newName, description: newDesc}]
+    const {index, toUpdateState} = this.getIndexAndToUpdateState(e);
+    const toUpdateKey = e.target.getAttribute('data-key');
+    const oldData = this.getElementWith(index, this.state[toUpdateState]);
+    oldData[toUpdateKey] = e.target.value;
+    const newDataArray = this.state[toUpdateState];
+    newDataArray[index] = oldData;
 
     this.setState({
-      [toUpdateState]: [...this.state[toUpdateState], updated]
+    [toUpdateState]: newDataArray
     })
   }
-/*
-  deleteFromArray = e => {
 
-  }
-*/
+getIndexAndToUpdateState = e => {
+  const toUpdateState = e.target.parentNode.getAttribute('data-state');
+  const index = e.target.parentNode.getAttribute('data-index');
+  return {index, toUpdateState};
+}
 
-getElementWith = (value, array) => {
+getElementWith = (index, array) => {
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i].name === value) return array[i];
+    // the index from data-index is a string so only used a double equal
+    if (i == index) return array[i];
   }
-
   return null;
 }
+
+deleteFromArray = e => {
+  const {index, toUpdateState} = this.getIndexAndToUpdateState(e);
+  const oldData = this.state[toUpdateState];
+  const newData = oldData.filter((element, i) => index != i);
+  this.setState({
+    [toUpdateState]: newData
+  })
+}
+
+addFromArray = e => {
+  const toUpdateState = e.target.parentNode.getAttribute('data-state');
+  const newData = this.state[toUpdateState]; // something wrong here
+  console.log(newData, toUpdateState);
+  newData.push({});
+  this.setState({
+    [toUpdateState]: newData
+  })
+}
+
   render() {
     return (
       <div className = 'App'>
           <Form data={this.state} update={e => this.updateData(e)} 
-                updateDataArray={e => this.updateDataArray(e)} /* deleteFromArray={e => this.deleteFromArray(e)} */ />
+                updateDataArray={e => this.updateDataArray(e)} 
+                deleteFromArray={e => this.deleteFromArray(e)} 
+                addFromArray={e => this.addFromArray(e)}
+                />
         <div className = 'generated'>
           <aside>
             <Personal personal={this.state.personal} />
