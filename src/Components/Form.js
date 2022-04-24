@@ -43,7 +43,7 @@ const Form = (props) => {
               </div>
             )
           })}
-          <button onClick={e => addFromArray(e)}>Add</button>
+          <button data-name='experience' onClick={e => addFromArray(e)}>Add Experience</button>
       </section>
       {/* add more section here */}
     </div>

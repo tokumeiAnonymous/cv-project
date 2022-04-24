@@ -3,9 +3,9 @@ const WorkExperience = (props) => {
     const { experience } = props;
     return (
         <ul>
-        {experience.map( job => {
+        {experience.map( (job, i) => {
             return (
-                <li key={job.name}>
+                <li key={i}>
                     <div>{job.name}</div>
                     <div>{job.description}</div>
                 </li>

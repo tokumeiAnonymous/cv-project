@@ -84,9 +84,9 @@ deleteFromArray = e => {
 }
 
 addFromArray = e => {
-  const toUpdateState = e.target.parentNode.getAttribute('data-state');
-  const newData = this.state[toUpdateState]; // something wrong here
-  console.log(newData, toUpdateState);
+  // parent is not the experience
+  const toUpdateState = e.target.getAttribute('data-name');
+  const newData = this.state[toUpdateState]; 
   newData.push({});
   this.setState({
     [toUpdateState]: newData
