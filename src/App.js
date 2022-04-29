@@ -32,7 +32,7 @@ class App extends Component {
       socials: [{ name: 'Github', link: 'https://github.com/tokumeiAnonymous' }, 
                 { name: 'LinkedIn', link: 'https://www.linkedin.com/in/jerome-taguba-a15735231/' }, 
                 { name: 'Website', link: 'https://tokumeianonymous.github.io/temporary-portfolio/' }],
-      skills: ['html/css/javascript', 'git', 'react', 'java', 'node']
+    skills: [{ name: 'html'}, { name: 'css'}, { name: 'javascript'}, { name: 'git'}, { name: 'react'}, { name: 'java'}, {name: 'node'}],
     };
     /* passed update method as props then receive it as onChange */
     this.updateData = this.updateData.bind(this);

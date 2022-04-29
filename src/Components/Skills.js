@@ -6,8 +6,8 @@ const Skills = (props) => {
         <ul>
         {skills.map( skill => {
             return (
-                <li key={skill}>
-                    <div>{skill}</div>
+                <li key={skill.name}>
+                    <div>{skill.name}</div>
                 </li>
             )
         })}
