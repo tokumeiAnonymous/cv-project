@@ -2,7 +2,7 @@
 const Form = (props) => {
 
   const { data, update, updateDataArray , deleteFromArray, addFromArray } = props;
-  const { personal, experience, education, projects, socials, /*skills*/ } = data;
+  const { personal, experience, education, projects, socials, skills } = data;
   return (
     <div className = 'form'>
       <section id='personal'>
@@ -26,8 +26,8 @@ const Form = (props) => {
           <label htmlFor='description'>Description: </label>
           <input id='description' type='text' placeholder={personal.description} onChange={e => {update(e)}} required/>
           
-          <label htmlFor='photo'>Photo: </label>
-          <input id='photo' type='file' accept='image/png, image/jpeg' onChange={e => {update(e)}} />
+          <label htmlFor='photo'>Photo Address: </label>
+          <input id='photo' placeholder={personal.photo} type='text' onChange={e => {update(e)}} />
       </section>
 
       <section id='work-experience'>
@@ -39,11 +39,11 @@ const Form = (props) => {
 
                 <label htmlFor='work-desc'>Work Description: </label>
                 <input id='work-desc' data-key='description' type='text' placeholder={job.description} onChange={e => updateDataArray(e)} required/>
-                <button onClick={e => deleteFromArray(e)} >Delete</button>
+                <button className='button-23 delete' onClick={e => deleteFromArray(e)} >Delete</button>
               </div>
             )
           })}
-          <button data-name='experience' onClick={e => addFromArray(e)}>Add Experience</button>
+          <button className='button-23 add' data-name='experience' onClick={e => addFromArray(e)}>Add Experience</button>
       </section>
 
       <section id='education'>
@@ -55,11 +55,11 @@ const Form = (props) => {
 
                 <label htmlFor='education-description'>Education Description: </label>
                 <input id='education-description' data-key='description' type='text' placeholder={edu.description} onChange={e => updateDataArray(e)} required/>
-                <button onClick={e => deleteFromArray(e)} >Delete</button>
+                <button className='button-23 delete' onClick={e => deleteFromArray(e)} >Delete</button>
               </div>
             )
           })}
-          <button data-name='education' onClick={e => addFromArray(e)}>Add Education</button>
+          <button className='button-23 add' data-name='education' onClick={e => addFromArray(e)}>Add Education</button>
       </section>
 
       <section id='projects'>
@@ -71,11 +71,11 @@ const Form = (props) => {
 
                 <label htmlFor='project-description'>Project Description: </label>
                 <input id='project-description' data-key='description' type='text' placeholder={project.description} onChange={e => updateDataArray(e)} required/>
-                <button onClick={e => deleteFromArray(e)} >Delete</button>
+                <button className='button-23 delete' onClick={e => deleteFromArray(e)} >Delete</button>
               </div>
             )
           })}
-          <button data-name='projects' onClick={e => addFromArray(e)}>Add Project</button>
+          <button className='button-23 add' data-name='projects' onClick={e => addFromArray(e)}>Add Project</button>
       </section>
 
       <section id='socials'>
@@ -87,26 +87,25 @@ const Form = (props) => {
 
                 <label htmlFor='social-link'>Social Link: </label>
                 <input id='social-link' data-key='link' type='text' placeholder={social.link} onChange={e => updateDataArray(e)} required/>
-                <button onClick={e => deleteFromArray(e)} >Delete</button>
+                <button className='button-23 delete' onClick={e => deleteFromArray(e)} >Delete</button>
               </div>
             )
           })}
-          <button data-name='socials' onClick={e => addFromArray(e)}>Add Social</button>
+          <button className='button-23 add' data-name='socials' onClick={e => addFromArray(e)}>Add Social</button>
       </section>
-      {/* 
+      
       <section id='skills'>
           {skills.map( (skill, i) => {
             return (
               <div key={i + ' skill'} data-state='skills' data-index={i} >
                 <label htmlFor='skill-name'>Skill Name: </label>
                 <input id='skill-name' data-key='name' type='text' placeholder={skill.name} onChange={e => updateDataArray(e)} required/>
-                <button onClick={e => deleteFromArray(e)} >Delete</button>
+                <button className='button-23 delete' onClick={e => deleteFromArray(e)} >Delete</button>
               </div>
             )
           })}
-          <button data-name='skills' onClick={e => addFromArray(e)}>Add Skill</button>
+          <button className='button-23 add' data-name='skills' onClick={e => addFromArray(e)}>Add Skill</button>
       </section>
-      */}
     </div>
   );
 }

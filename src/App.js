@@ -20,19 +20,15 @@ class App extends Component {
         contact: '091234567',
         email: 'janedoe@gmail.com',
         description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, recusandae et.',
+          'Someting about yourself goes here. Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         photo: 'https://www.stevensegallery.com/400/400',
       },
       experience: [{ name: 'Awesome Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
-                    { name: 'Fantastic Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}],
-      education: [{ name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
-                    { name: 'The Odin Project', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},],
-      projects: [{ name: 'Project 1', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 1' },
-                  { name: 'Project 2', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 2' }],
-      socials: [{ name: 'Github', link: 'https://github.com/tokumeiAnonymous' }, 
-                { name: 'LinkedIn', link: 'https://www.linkedin.com/in/jerome-taguba-a15735231/' }, 
-                { name: 'Website', link: 'https://tokumeianonymous.github.io/temporary-portfolio/' }],
-    skills: [{ name: 'html'}, { name: 'css'}, { name: 'javascript'}, { name: 'git'}, { name: 'react'}, { name: 'java'}, {name: 'node'}],
+],
+      education: [{ name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}],
+      projects: [{ name: 'Project 1', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 1' }],
+      socials: [{ name: 'Github', link: 'https://github.com/tokumeiAnonymous' }],
+    skills: [{ name: 'javascript'}],
     };
     /* passed update method as props then receive it as onChange */
     this.updateData = this.updateData.bind(this);

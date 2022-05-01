@@ -1,45 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&family=Radio+Canada:wght@400;700&display=swap');
 
 :root {
   --large-margin: 50px;
   --medium-margin: 20px;
   --small-margin: 10px;
+  --gray: hsl(0, 0%, 37%);
+  --light-cyan: hsla(208, 34%, 76%, 1); 
+  --blue: hsla(191, 96%, 20%, 1);
+  --cyan: hsla(185, 85%, 40%, 1);
+  --delete-button: hsla(350, 80%, 40%, 0.5);
+  --add-button: hsla(197, 96%, 46%, 0.8);
+  --font-600: 'Orelega One', cursive;
+  --font-400: 'Radio Canada', sans-serif;
+  font-family: var(--font-400);
+}
+/* overwriting default styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: .5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cyan);
+}
+
+/* button getcssscan.com */
+.button-23 {
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0;
+  padding: .2rem 1rem;
+  position: relative;
+  text-align: center;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  width: auto;
+}
+
+.add {
+  background-color: var(--add-button);
+}
+
+.delete {
+  background-color: var(--delete-button);
+}
+
+.button-23:hover {
+  border: 1px solid white;
+}
+
+.add:hover {
+  background-color:hsla(197, 96%, 46%, 1)
+}
+
+.delete:hover {
+  background-color: hsla(350, 80%, 50%, 1);
+}
+
+input {
+  border: 1px solid var(--gray);
+  border-radius: 3px;
+  padding: 5px;
 }
 
 .App {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
   justify-content: center;
   align-items: center;
 }
 
 .form, .generated {
-  flex-basis: 600px;
-  margin-left: var(--medium-margin);
-  margin-right: var(--medium-margin);
+  flex-basis: 440px;
+  max-width: 780px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  margin: 1rem;
   padding: 1rem;
   border: 1px solid black;
 }
 
+section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+section>div {
+  display: flex;
+  margin: .5rem;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+/*Personal Component*/
 .form #personal {
   display: flex;
   flex-direction: column;
 }
-/*Personal Component*/
+
 .generated {
   display: flex;
+  min-height: 850px;
 }
 
-.aside {
-  width: 100px;
+aside {
+  width: 200px;
   flex-grow: 1;
 }
 
-.main {
-  width: 200px;
+main {
+  width: 300px;
   flex-grow: 2;
 }
+
 .generated img {
   border-radius: 200px;
+  border: 2px solid black;
   width: 200px;
+}
+
+.generated #name {
+  font-size: 2.5rem;
+  color: var(--cyan);
+  font-family: var(--font-600);
+}
+
+.generated #profession {
+  color: var(--blue);
+}
+
+.sub-title {
+  color: var(--blue);
+  font-size: 1.5rem;
 }
