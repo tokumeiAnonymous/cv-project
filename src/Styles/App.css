@@ -90,8 +90,9 @@ input {
 }
 
 section {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  border-bottom: 3px solid var(--cyan);
 }
 
 section>div {

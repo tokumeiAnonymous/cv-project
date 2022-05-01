@@ -7,7 +7,7 @@ const Projects = (props) => {
         {projects.map( project => {
             return (
                 <li key={project.name}>
-                    <a href={project.link}>{project.name}</a>
+                    <div>{project.name}</div>
                     <div>{project.description}</div>
                 </li>
             )

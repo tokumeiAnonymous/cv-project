@@ -26,9 +26,9 @@ class App extends Component {
       experience: [{ name: 'Awesome Job', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'},
 ],
       education: [{ name: 'BSME', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}],
-      projects: [{ name: 'Project 1', link: 'https://github.com/tokumeiAnonymous', description: 'Simple description 1' }],
+      projects: [{ name: 'Project 1', description: 'Simple description 1' }],
       socials: [{ name: 'Github', link: 'https://github.com/tokumeiAnonymous' }],
-    skills: [{ name: 'javascript'}],
+    skills: [{ name: 'Javascript'}],
     };
     /* passed update method as props then receive it as onChange */
     this.updateData = this.updateData.bind(this);
